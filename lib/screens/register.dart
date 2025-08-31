@@ -51,55 +51,14 @@ class RegisterScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 50),
                     backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)
+                    )
                   ),
                   child: Text("Continue"),
                 ),
-                SizedBox(height: 32),
-                  //horizantal lines using divider and inputting of or 
-                  Row(
-                  children: [
-                    Expanded(
-                      child: Divider(
-                        thickness: 1,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text("or"),
-                    ),
-                    Expanded(
-                      child: Divider(
-                        thickness: 1,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 32),
-                OutlinedButton.icon(
-                  onPressed: () {
-                    //database
-                },
-                  icon: Icon(Icons.g_mobiledata), // Placeholder icon
-                  label: Text("Continue with Google"),
-                  style: OutlinedButton.styleFrom(minimumSize: Size(double.infinity, 50),
-                  backgroundColor: Colors.grey[300],
-                  foregroundColor: Colors.black),
-                ),
-                SizedBox(height: 8),
-                OutlinedButton.icon(
-                  onPressed: () {
-                    //database
-                },
-                  icon: Icon(Icons.apple),
-                  label: Text("Continue with Apple"),
-                  style: OutlinedButton.styleFrom(minimumSize: Size(double.infinity, 50),
-                  backgroundColor: Colors.grey[300],
-                  foregroundColor: Colors.black),
-                ),
-                SizedBox(height: 10),
+                SizedBox(height: 16),
                 Center(
                   child: TextButton(
                     onPressed: () {

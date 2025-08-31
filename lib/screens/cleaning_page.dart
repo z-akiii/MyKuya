@@ -7,6 +7,7 @@ class CleaningPage extends StatefulWidget {
   State<CleaningPage> createState() => _CleaningPageState();
 }
 
+// Cleaning service types
 List<String> cleaningTypes = ['Regular Cleaning', 'Deep Cleaning', 'Carwash'];
 
 class _CleaningPageState extends State<CleaningPage> {
@@ -18,6 +19,7 @@ class _CleaningPageState extends State<CleaningPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      // Close keyboard when tapping outside
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
       },
@@ -34,6 +36,7 @@ class _CleaningPageState extends State<CleaningPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
 
           children: [
+            // Cleaning types section
             Container(
               margin: EdgeInsets.only(top: 20,left: 20),
               child: Text('Cleaning Types',
@@ -45,6 +48,7 @@ class _CleaningPageState extends State<CleaningPage> {
               ),
             ),
 
+            // Options with radio buttons
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -126,6 +130,7 @@ class _CleaningPageState extends State<CleaningPage> {
               ],
             ),
 
+            // Date picker section
             Container(
               margin: EdgeInsets.only(top: 20, left: 20),
               child: Text('Pick a Date',
@@ -136,6 +141,7 @@ class _CleaningPageState extends State<CleaningPage> {
               ),
             ),
 
+            // Date input field
             Center(
               child: Padding(
                 padding: const EdgeInsets.only(left: 20,right: 20, top: 10),
@@ -161,6 +167,7 @@ class _CleaningPageState extends State<CleaningPage> {
               ),
             ),
 
+            // Location input field
             Container(
               margin: EdgeInsets.only(top: 20,left: 20),
               child: Text('Location',
@@ -187,6 +194,7 @@ class _CleaningPageState extends State<CleaningPage> {
               ),
             ),
 
+            // Price breakdown section
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -204,6 +212,7 @@ class _CleaningPageState extends State<CleaningPage> {
 
             Spacer(),
       
+            // Confirm button
               Container(
                 margin: EdgeInsets.all(20),
                 child: ElevatedButton(
@@ -229,6 +238,7 @@ class _CleaningPageState extends State<CleaningPage> {
     );
   }
 
+  // Pick a date and set it to the text field
   Future<void> _pickDate() async{
     DateTime? _pickedDate = await showDatePicker(
       context: context,

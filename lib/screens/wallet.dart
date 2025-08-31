@@ -12,8 +12,6 @@ class _WalletState extends State<Wallet> {
 
   TextEditingController _intController = TextEditingController();
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +32,7 @@ class _WalletState extends State<Wallet> {
         children: [
           Align(
             alignment: Alignment.topCenter,
-            child: atmCard(),
+            child: atmCard(), // ATM card UI container
           ),
 
           SizedBox(
@@ -91,6 +89,7 @@ class _WalletState extends State<Wallet> {
           hintText: 'Enter amount'
           ),
         ),
++      // Dialog action buttons: Cancel and Confirm
         actions: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -121,16 +120,18 @@ class _WalletState extends State<Wallet> {
 
   int balance = 0;
 
+  // Add entered amount to balance
   void _topUpBalance(){
     final int? parsedValue = int.tryParse(_intController.text);
     if (parsedValue != null) {
       setState(() {
-        balance += parsedValue;
+        balance += parsedValue; // Update balance
         });
       Navigator.of(context).pop();
     }
   }
   
+  // ATM card UI container
   Container atmCard() {
     return Container(
             margin: EdgeInsets.only(top: 20),

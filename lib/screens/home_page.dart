@@ -30,7 +30,8 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text('MyKuya',
           style: TextStyle(
-            fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold,
+            fontSize: 24
             ),
           ),
           backgroundColor: Colors.white,
@@ -49,7 +50,8 @@ class _HomePageState extends State<HomePage> {
               child: Text('Common Errands',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 22
+                fontSize: 22,
+                color: Color(0xFF55A2F0)
                 ),
               ),
             ),
@@ -109,14 +111,14 @@ class _HomePageState extends State<HomePage> {
           margin: EdgeInsets.only(top: 20, left: 20, right: 20),
           child: TextField(
             decoration: InputDecoration(
-              /* filled: true,
-              fillColor: Colors.grey[200], */
               contentPadding: EdgeInsets.all(12),
-
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
                 borderSide: BorderSide(color: const Color.fromRGBO(207, 216, 220, 1),)
-                
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide(color: Color(0xFF55A2F0))
               ),
               hintText: 'Search for errands'
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mykuya/screens/home_page.dart';
-import 'package:mykuya/screens/profile.dart';
+import 'package:mykuya/screens/notifications.dart';
 import 'package:mykuya/screens/wallet.dart';
 
 class Layout extends StatefulWidget {
@@ -22,7 +22,7 @@ class _LayoutState extends State<Layout> {
 
   final List _screens = [
   HomePage(),
-  Profile(),
+  Notifications(),
   Wallet(),
   ];
 
@@ -53,16 +53,19 @@ class _LayoutState extends State<Layout> {
           items: [
         
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home,
+              color: Color(0xFF55A2F0)),
               label: 'Home'
               ),
         
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile'),
+              icon: Icon(Icons.notifications,
+              color: Color(0xFF55A2F0)),
+              label: 'Notifications'),
         
             BottomNavigationBarItem(
-              icon: Icon(Icons.wallet),
+              icon: Icon(Icons.wallet,
+              color: Color(0xFF55A2F0)),
               label: 'Wallet')
         
           ]

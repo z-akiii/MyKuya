@@ -25,19 +25,21 @@ class ErrandModel {
 
     errands.add(
       ErrandModel(
+        errand: 'Cleaning', 
+        iconType: Icons.cleaning_services,
+        route: '/cleaning'
+      )
+    );
+
+    errands.add(
+      ErrandModel(
         errand: 'Shopping', 
         iconType: Icons.shopping_bag,
         route: '/shopping'
       )
     );
 
-    errands.add(
-      ErrandModel(
-        errand: 'Cleaning', 
-        iconType: Icons.cleaning_services,
-        route: '/cleaning'
-      )
-    );
+    
 
     errands.add(
       ErrandModel(

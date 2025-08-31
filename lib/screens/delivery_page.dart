@@ -11,16 +11,16 @@ class DeliveryPage extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Book a Delivery',
-          style: TextStyle(
-            fontWeight: FontWeight.bold
-          ),),
+          title: Text('Book a Delivery'),
           backgroundColor: Colors.white,
           centerTitle: true,
           ),
+
         backgroundColor: Colors.white,
+
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          
           children: [
             Container(
               margin: EdgeInsets.only(left: 20, top: 20),
@@ -110,7 +110,7 @@ class DeliveryPage extends StatelessWidget {
 
                 Container(
                   margin: EdgeInsets.only(left: 20),
-                  child: Text('Desination',
+                  child: Text('Destination',
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold
@@ -162,7 +162,7 @@ class DeliveryPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {}, 
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[900],
+                  backgroundColor: Color(0xFF55A2F0),
                   fixedSize: Size(450, 70),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)
@@ -172,10 +172,10 @@ class DeliveryPage extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16
-                ),),
-                ),
-            )
-            
+                  ),
+                  ),
+              ),
+            )  
           ],
         ),
       ),

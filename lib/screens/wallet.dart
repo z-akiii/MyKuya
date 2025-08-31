@@ -43,7 +43,7 @@ class _WalletState extends State<Wallet> {
 
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.grey[900]
+              backgroundColor: Color(0xFF55A2F0)
             ),
             onPressed: () {
               topUpDialog();
@@ -53,7 +53,8 @@ class _WalletState extends State<Wallet> {
               fontWeight: FontWeight.bold,
               color: Colors.white,
               fontSize: 16
-            ),)
+                ),
+              ),
             ),
             SizedBox(
               height: 30
@@ -65,7 +66,7 @@ class _WalletState extends State<Wallet> {
                 child: Text('Latest Transactions',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.bold
+                  fontWeight: FontWeight.bold,
                 ),)
                 )
               )
@@ -131,16 +132,16 @@ class _WalletState extends State<Wallet> {
   }
   
   Container atmCard() {
-    return Container( //ATM CARD LAYOUT
+    return Container(
             margin: EdgeInsets.only(top: 20),
             height: 250,
             width: 400,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Colors.grey[900]
+              color: Color(0xFF55A2F0)
             ),
 
-            child: Column( //PONSILICIOUS TEXT
+            child: Column(
               children: [
                 Align(
                   alignment: Alignment.topLeft,
@@ -156,9 +157,9 @@ class _WalletState extends State<Wallet> {
                   ),
                 ),
                 
-                Spacer(), //PARA MAPUNTA SA BABA YUNG CURRENT BALANCE
+                Spacer(),
 
-                Row( //CURRENT BALANCE TEXT PATI YUNG AMOUNT
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(

@@ -7,7 +7,13 @@ class PetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pet'),
+        title: Text('Pet Sitting'),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+      ),
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Text('Coming soon...'),
       ),
     );
   }

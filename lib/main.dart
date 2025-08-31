@@ -4,6 +4,8 @@ import 'package:mykuya/screens/delivery_page.dart';
 import 'package:mykuya/screens/layout.dart';
 import 'package:mykuya/screens/pet_page.dart';
 import 'package:mykuya/screens/shopping_page.dart';
+import 'package:mykuya/screens/login.dart';
+import 'package:mykuya/screens/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
+      initialRoute: '/login',
       routes: {
+        '/login': (context) => LoginScreen(),
+        '/register': (context) => RegisterScreen(),
         '/delivery' : (context) => DeliveryPage(),
         '/shopping' : (context) => ShoppingPage(),
         '/cleaning' : (context) => CleaningPage(),

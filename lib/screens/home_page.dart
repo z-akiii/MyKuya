@@ -100,9 +100,9 @@ class _HomePageState extends State<HomePage> {
                             height: 150,
                             width: 150,
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black),
                               borderRadius: BorderRadius.circular(15)
                             ),
+                            child: Image.asset(errands[index].imagePath),
                           ),
                           // Errand title
                           Text(
@@ -162,9 +162,9 @@ class _HomePageState extends State<HomePage> {
                             height: 150,
                             width: 150,
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black),
                               borderRadius: BorderRadius.circular(15)
                             ),
+                            child: Image.asset(specialErrands[index].imagePath),
                           ),
                           // Errand title
                           Text(

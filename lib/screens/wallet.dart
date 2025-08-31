@@ -89,7 +89,7 @@ class _WalletState extends State<Wallet> {
           hintText: 'Enter amount'
           ),
         ),
-+      // Dialog action buttons: Cancel and Confirm
+      // Dialog action buttons: Cancel and Confirm
         actions: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

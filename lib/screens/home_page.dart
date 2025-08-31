@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mykuya/models/errand_models.dart';
 
+// HomePage widget (main screen for errands)
 class HomePage extends StatefulWidget {
   HomePage({super.key});
 
@@ -9,29 +10,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Stores errands data
   List<ErrandModel> errands = [];
 
+  // Fetch errands from model
   void _getErrands() {
     errands = ErrandModel.getErrands();
   }
 
   @override
   void initState(){
-    _getErrands();
+    _getErrands(); // load errands on start
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      // hides keyboard when tapping outside TextField
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text('MyKuya',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24
+          title: Text(
+            'MyKuya',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24
             ),
           ),
           backgroundColor: Colors.white,
@@ -43,20 +48,24 @@ class _HomePageState extends State<HomePage> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            searchField(),
+            searchField(), // top search bar
             SizedBox(height: 20),
+
+            // Section title
             Container(
               margin: EdgeInsets.only(left: 20),
-              child: Text('Common Errands',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
-                color: Color(0xFF55A2F0)
+              child: Text(
+                'Common Errands',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Color(0xFF55A2F0)
                 ),
               ),
             ),
             SizedBox(height: 15,),
       
+            // Horizontal scroll list of errands
             Container(
               height: 220,
               child: ListView.separated(
@@ -66,6 +75,7 @@ class _HomePageState extends State<HomePage> {
                 itemCount: errands.length,
                 itemBuilder: (context, index){
                   return GestureDetector(
+                    // Navigate to selected errand screen
                     onTap: () {
                       Navigator.pushNamed(context, errands[index].route);
                     },
@@ -75,10 +85,11 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         border: Border.all(color: Colors.black)
-                        ),
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          // Placeholder for errand image
                           Container(
                             height: 150,
                             width: 150,
@@ -87,10 +98,12 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(15)
                             ),
                           ),
-                          Text(errands[index].errand,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16
+                          // Errand title
+                          Text(
+                            errands[index].errand,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16
                             ),
                           ),
                         ],
@@ -106,23 +119,24 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  // Search bar widget
   Container searchField() {
     return Container(
-          margin: EdgeInsets.only(top: 20, left: 20, right: 20),
-          child: TextField(
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.all(12),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide(color: const Color.fromRGBO(207, 216, 220, 1),)
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide(color: Color(0xFF55A2F0))
-              ),
-              hintText: 'Search for errands'
-            ),
+      margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+      child: TextField(
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(12),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: const Color.fromRGBO(207, 216, 220, 1),)
           ),
-        );
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: Color(0xFF55A2F0))
+          ),
+          hintText: 'Search for errands'
+        ),
+      ),
+    );
   }
 }

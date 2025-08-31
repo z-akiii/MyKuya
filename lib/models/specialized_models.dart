@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 // Model for errands
 class SpecializedErrandModel {
   String errand;
-  IconData iconType;
+  String? iconPath;
+  IconData? iconType;
   String route;
 
   SpecializedErrandModel({
     required this.errand,
-    required this.iconType,
+    this.iconType,
+    this.iconPath;
     required this.route
   });
 
@@ -19,6 +21,7 @@ class SpecializedErrandModel {
       SpecializedErrandModel(
         errand: 'Document Processing', 
         iconType: Icons.file_open,
+        iconPath: 'assets/icons/documents.png',
         route: '/documents'
       )
     );
@@ -28,6 +31,7 @@ class SpecializedErrandModel {
       SpecializedErrandModel(
         errand: 'Tech Assistance', 
         iconType: Icons.laptop,
+        iconPath: 'assets/icons/tech.png',
         route: '/tech'
       )
     );
@@ -35,7 +39,8 @@ class SpecializedErrandModel {
     specialErrands.add(
       SpecializedErrandModel(
         errand: 'Home Repair', 
-        iconType: Icons.home,
+        iconType: Icons.home
+        iconPath: 'assets/icons/homerepair.png',
         route: '/homerepair'
       )
     );
@@ -44,6 +49,7 @@ class SpecializedErrandModel {
       SpecializedErrandModel(
         errand: 'Health and Wellness', 
         iconType: Icons.health_and_safety,
+        iconPath: 'assets/icons/health.png'
         route: '/health'
       ),
     );

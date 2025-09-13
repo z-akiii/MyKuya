@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mykuya/screens/layout.dart';
 import 'package:mykuya/screens/register.dart';
 import 'package:mykuya/screens/home_page.dart';
 
@@ -87,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: ElevatedButton(
                 onPressed: () {
                       Navigator.push(context,
-                     MaterialPageRoute(builder: (context) => HomePage()),
+                     MaterialPageRoute(builder: (context) => Layout()),
                     );
                 },
                 style: ElevatedButton.styleFrom(
